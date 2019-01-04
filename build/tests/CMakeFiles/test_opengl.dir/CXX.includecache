@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/test_opengl.cpp
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+thread
+-
+iostream
+-
+chrono
+-
+cmath
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fopenmp -std=c++11 -o3 -fpermissive -DGLEW_STATIC  -rdynamic CMakeFiles/test_opengl.dir/test_opengl.cpp.o  -o ../bin/test_opengl -lGLEW -lGL -lGLU -lglfw -lGLEW -lGL -lGLU -lglfw 

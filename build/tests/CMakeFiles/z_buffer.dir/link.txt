@@ -1,0 +1,1 @@
+/usr/bin/c++  -fopenmp -std=c++11 -o3 -fpermissive -DGLEW_STATIC  -rdynamic CMakeFiles/z_buffer.dir/z_buffer.cpp.o  -o ../bin/z_buffer -Wl,-rpath,/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src -lGLEW ../src/libmylib.so -lGL -lGLU -lglfw -lGLEW -lglut -lglfw 
