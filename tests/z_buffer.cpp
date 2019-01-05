@@ -8,7 +8,7 @@
 #include <boost/property_tree/json_parser.hpp>
 
 #include "model_obj.h"
-
+#include "z_buffer_alg.h"
 using namespace std;
 using namespace Eigen;
 using namespace marvel;
@@ -136,7 +136,6 @@ int main(int argc, char** argv) {
   
   model_obj model_(surf, nods);
   MatrixXf bdbox;
-
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
   bdbox = model_.get_bdbox();
   cout << bdbox << endl;
@@ -151,7 +150,19 @@ int main(int argc, char** argv) {
   bdbox = model_.get_bdbox();
   cout << bdbox << endl;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
-  
+
+#if 1
+  z_buffer_alg solver(model_.tris_.data(), model_.nods_.data(), model_.nods_.cols(), model_.tris_.cols(), window_height);
+  cout << "here" << endl;
+  // auto tri1 = solver.polygen_table_
+  cout << solver.polygen_table_.size() << endl;
+  for(auto i : solver.polygen_table_[250]){
+      cout << i.dy << " ";
+  }
+      
+#endif
+
+
 
   
   // Initialize GLFW

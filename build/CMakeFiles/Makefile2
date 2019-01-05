@@ -84,7 +84,7 @@ src/preinstall:
 src/CMakeFiles/mylib.dir/all:
 	$(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/depend
 	$(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=3,4,5 "Built target mylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target mylib"
 .PHONY : src/CMakeFiles/mylib.dir/all
 
 # Include target in all.
@@ -94,7 +94,7 @@ all: src/CMakeFiles/mylib.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/mylib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mylib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/mylib.dir/rule
@@ -145,7 +145,7 @@ tests/preinstall:
 tests/CMakeFiles/z_buffer.dir/all: src/CMakeFiles/mylib.dir/all
 	$(MAKE) -f tests/CMakeFiles/z_buffer.dir/build.make tests/CMakeFiles/z_buffer.dir/depend
 	$(MAKE) -f tests/CMakeFiles/z_buffer.dir/build.make tests/CMakeFiles/z_buffer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=10,11 "Built target z_buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=12,13 "Built target z_buffer"
 .PHONY : tests/CMakeFiles/z_buffer.dir/all
 
 # Include target in all.
@@ -155,7 +155,7 @@ all: tests/CMakeFiles/z_buffer.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/z_buffer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/z_buffer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/z_buffer.dir/rule
@@ -219,7 +219,7 @@ clean: tests/CMakeFiles/c6.dir/clean
 tests/CMakeFiles/test_opengl.dir/all:
 	$(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/depend
 	$(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=6,7 "Built target test_opengl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=8,9 "Built target test_opengl"
 .PHONY : tests/CMakeFiles/test_opengl.dir/all
 
 # Include target in all.
@@ -256,7 +256,7 @@ clean: tests/CMakeFiles/test_opengl.dir/clean
 tests/CMakeFiles/tri.dir/all:
 	$(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/depend
 	$(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=8,9 "Built target tri"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=10,11 "Built target tri"
 .PHONY : tests/CMakeFiles/tri.dir/all
 
 # Include target in all.

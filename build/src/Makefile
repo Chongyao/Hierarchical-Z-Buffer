@@ -152,6 +152,33 @@ frame_buffer.cpp.s:
 	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/frame_buffer.cpp.s
 .PHONY : frame_buffer.cpp.s
 
+geometry.o: geometry.cpp.o
+
+.PHONY : geometry.o
+
+# target to build an object file
+geometry.cpp.o:
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/geometry.cpp.o
+.PHONY : geometry.cpp.o
+
+geometry.i: geometry.cpp.i
+
+.PHONY : geometry.i
+
+# target to preprocess a source file
+geometry.cpp.i:
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/geometry.cpp.i
+.PHONY : geometry.cpp.i
+
+geometry.s: geometry.cpp.s
+
+.PHONY : geometry.s
+
+# target to generate assembly for a file
+geometry.cpp.s:
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/geometry.cpp.s
+.PHONY : geometry.cpp.s
+
 model_obj.o: model_obj.cpp.o
 
 .PHONY : model_obj.o
@@ -179,6 +206,33 @@ model_obj.cpp.s:
 	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/model_obj.cpp.s
 .PHONY : model_obj.cpp.s
 
+z_buffer_alg.o: z_buffer_alg.cpp.o
+
+.PHONY : z_buffer_alg.o
+
+# target to build an object file
+z_buffer_alg.cpp.o:
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o
+.PHONY : z_buffer_alg.cpp.o
+
+z_buffer_alg.i: z_buffer_alg.cpp.i
+
+.PHONY : z_buffer_alg.i
+
+# target to preprocess a source file
+z_buffer_alg.cpp.i:
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.i
+.PHONY : z_buffer_alg.cpp.i
+
+z_buffer_alg.s: z_buffer_alg.cpp.s
+
+.PHONY : z_buffer_alg.s
+
+# target to generate assembly for a file
+z_buffer_alg.cpp.s:
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.s
+.PHONY : z_buffer_alg.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -191,9 +245,15 @@ help:
 	@echo "... frame_buffer.o"
 	@echo "... frame_buffer.i"
 	@echo "... frame_buffer.s"
+	@echo "... geometry.o"
+	@echo "... geometry.i"
+	@echo "... geometry.s"
 	@echo "... model_obj.o"
 	@echo "... model_obj.i"
 	@echo "... model_obj.s"
+	@echo "... z_buffer_alg.o"
+	@echo "... z_buffer_alg.i"
+	@echo "... z_buffer_alg.s"
 .PHONY : help
 
 

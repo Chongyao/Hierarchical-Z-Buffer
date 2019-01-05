@@ -98,6 +98,16 @@ readOBJ.cpp
 Eigen/Core
 -
 
+../src/z_buffer_alg.h
+list
+-
+vector
+-
+Eigen/Dense
+-
+memory
+-
+
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/z_buffer.cpp
 GL/glew.h
 -
@@ -115,6 +125,8 @@ boost/property_tree/json_parser.hpp
 -
 model_obj.h
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/model_obj.h
+z_buffer_alg.h
+/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/z_buffer_alg.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

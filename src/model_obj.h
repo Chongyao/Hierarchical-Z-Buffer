@@ -12,7 +12,7 @@ class model_obj{
   Eigen::MatrixXf get_bdbox() const;
 
   int scale_and_translate(const float factor, const Eigen::Vector3f& offset);
- protected:
+ // protected:
   size_t num_tris_;
   Eigen::MatrixXi tris_;
   Eigen::MatrixXf nods_;

@@ -81,9 +81,33 @@ src/CMakeFiles/mylib.dir/frame_buffer.cpp.o.provides: src/CMakeFiles/mylib.dir/f
 src/CMakeFiles/mylib.dir/frame_buffer.cpp.o.provides.build: src/CMakeFiles/mylib.dir/frame_buffer.cpp.o
 
 
+src/CMakeFiles/mylib.dir/geometry.cpp.o: src/CMakeFiles/mylib.dir/flags.make
+src/CMakeFiles/mylib.dir/geometry.cpp.o: ../src/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mylib.dir/geometry.cpp.o"
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mylib.dir/geometry.cpp.o -c /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.cpp
+
+src/CMakeFiles/mylib.dir/geometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mylib.dir/geometry.cpp.i"
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.cpp > CMakeFiles/mylib.dir/geometry.cpp.i
+
+src/CMakeFiles/mylib.dir/geometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/geometry.cpp.s"
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.cpp -o CMakeFiles/mylib.dir/geometry.cpp.s
+
+src/CMakeFiles/mylib.dir/geometry.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/mylib.dir/geometry.cpp.o.requires
+
+src/CMakeFiles/mylib.dir/geometry.cpp.o.provides: src/CMakeFiles/mylib.dir/geometry.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/geometry.cpp.o.provides.build
+.PHONY : src/CMakeFiles/mylib.dir/geometry.cpp.o.provides
+
+src/CMakeFiles/mylib.dir/geometry.cpp.o.provides.build: src/CMakeFiles/mylib.dir/geometry.cpp.o
+
+
 src/CMakeFiles/mylib.dir/model_obj.cpp.o: src/CMakeFiles/mylib.dir/flags.make
 src/CMakeFiles/mylib.dir/model_obj.cpp.o: ../src/model_obj.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/mylib.dir/model_obj.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/mylib.dir/model_obj.cpp.o"
 	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mylib.dir/model_obj.cpp.o -c /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.cpp
 
 src/CMakeFiles/mylib.dir/model_obj.cpp.i: cmake_force
@@ -105,20 +129,48 @@ src/CMakeFiles/mylib.dir/model_obj.cpp.o.provides: src/CMakeFiles/mylib.dir/mode
 src/CMakeFiles/mylib.dir/model_obj.cpp.o.provides.build: src/CMakeFiles/mylib.dir/model_obj.cpp.o
 
 
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o: src/CMakeFiles/mylib.dir/flags.make
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o: ../src/z_buffer_alg.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o"
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mylib.dir/z_buffer_alg.cpp.o -c /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.cpp
+
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mylib.dir/z_buffer_alg.cpp.i"
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.cpp > CMakeFiles/mylib.dir/z_buffer_alg.cpp.i
+
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mylib.dir/z_buffer_alg.cpp.s"
+	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.cpp -o CMakeFiles/mylib.dir/z_buffer_alg.cpp.s
+
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.requires
+
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.provides: src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.provides.build
+.PHONY : src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.provides
+
+src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.provides.build: src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o
+
+
 # Object files for target mylib
 mylib_OBJECTS = \
 "CMakeFiles/mylib.dir/frame_buffer.cpp.o" \
-"CMakeFiles/mylib.dir/model_obj.cpp.o"
+"CMakeFiles/mylib.dir/geometry.cpp.o" \
+"CMakeFiles/mylib.dir/model_obj.cpp.o" \
+"CMakeFiles/mylib.dir/z_buffer_alg.cpp.o"
 
 # External object files for target mylib
 mylib_EXTERNAL_OBJECTS =
 
 src/libmylib.so: src/CMakeFiles/mylib.dir/frame_buffer.cpp.o
+src/libmylib.so: src/CMakeFiles/mylib.dir/geometry.cpp.o
 src/libmylib.so: src/CMakeFiles/mylib.dir/model_obj.cpp.o
+src/libmylib.so: src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o
 src/libmylib.so: src/CMakeFiles/mylib.dir/build.make
 src/libmylib.so: /usr/lib/x86_64-linux-gnu/libGLEW.so
 src/libmylib.so: src/CMakeFiles/mylib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libmylib.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libmylib.so"
 	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mylib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,7 +179,9 @@ src/CMakeFiles/mylib.dir/build: src/libmylib.so
 .PHONY : src/CMakeFiles/mylib.dir/build
 
 src/CMakeFiles/mylib.dir/requires: src/CMakeFiles/mylib.dir/frame_buffer.cpp.o.requires
+src/CMakeFiles/mylib.dir/requires: src/CMakeFiles/mylib.dir/geometry.cpp.o.requires
 src/CMakeFiles/mylib.dir/requires: src/CMakeFiles/mylib.dir/model_obj.cpp.o.requires
+src/CMakeFiles/mylib.dir/requires: src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o.requires
 
 .PHONY : src/CMakeFiles/mylib.dir/requires
 

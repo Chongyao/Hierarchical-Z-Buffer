@@ -13,6 +13,7 @@ tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o
  ../external/libigl/include/igl/readOBJ.cpp
  ../external/libigl/include/igl/readOBJ.h
  ../src/model_obj.h
+ ../src/z_buffer_alg.h
  /home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/z_buffer.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core

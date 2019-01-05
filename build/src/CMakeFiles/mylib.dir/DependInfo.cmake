@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/frame_buffer.cpp" "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/mylib.dir/frame_buffer.cpp.o"
+  "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.cpp" "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/mylib.dir/geometry.cpp.o"
   "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.cpp" "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/mylib.dir/model_obj.cpp.o"
+  "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.cpp" "/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/mylib.dir/z_buffer_alg.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

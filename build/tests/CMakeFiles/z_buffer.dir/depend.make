@@ -12,6 +12,7 @@ tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: ../external/libigl/include/igl/min
 tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: ../external/libigl/include/igl/readOBJ.cpp
 tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: ../external/libigl/include/igl/readOBJ.h
 tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: ../src/model_obj.h
+tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: ../src/z_buffer_alg.h
 tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: ../tests/z_buffer.cpp
 tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: /usr/include/eigen3/Eigen/Cholesky
 tests/CMakeFiles/z_buffer.dir/z_buffer.cpp.o: /usr/include/eigen3/Eigen/Core
