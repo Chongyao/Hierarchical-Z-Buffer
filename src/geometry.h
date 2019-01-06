@@ -13,15 +13,18 @@ double clo_surf_vol(const Eigen::MatrixXd &nods, const Eigen::MatrixXi &surf);
 int build_bdbox(const Eigen::MatrixXd &nods, Eigen::MatrixXd & bdbox);
 
 template < typename T>
-int project_triangle(const Eigen::Matrix<T, 3, Eigen::Dynamic> &vertices, const Eigen::Matrix<T, 4, 1>& plane, Eigen::Matrix<T, 3, Eigen::Dynamic>&  projected_triangle){
+int project_triangle(const Eigen::Matrix<T, -1, -1> &vertices, const Eigen::Matrix<T, 4, 1>& plane, Eigen::Matrix<T, -1, -1>&  projected_triangle){
+  #pragma parallel omp for
   for(size_t i = 0; i < vertices.cols(); ++i){
+    //only loop x and y to save depth!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
     for(size_t j = 0; j < 3; ++j){
       size_t dim_a = j, dim_b = (j + 1) % 3, dim_c = ( j + 2) % 3;
       projected_triangle(j, i) = (pow(plane(dim_b), 2) + pow(plane(dim_c), 2)) * vertices(dim_a, i)
           -plane(dim_a) * (plane(dim_b) * vertices(dim_b, i) + plane(dim_c) * vertices(dim_c, i) + plane(3));
     }
   }
-  projected_triangle /= plane(0) * plane(0) + plane(1) * plane(1) + plane(2) * plane(2);
+  projected_triangle.row(0) /= plane(0) * plane(0) + plane(1) * plane(1) + plane(2) * plane(2);
+  projected_triangle.row(1) /= plane(0) * plane(0) + plane(1) * plane(1) + plane(2) * plane(2);  
   return 0;
 }
 

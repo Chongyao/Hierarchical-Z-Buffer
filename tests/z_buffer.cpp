@@ -134,32 +134,26 @@ int main(int argc, char** argv) {
   surf.transposeInPlace();
   nods.transposeInPlace();
   
-  model_obj model_(surf, nods);
+  shared_ptr<model_obj> model_ptr(new model_obj(surf, nods));
   MatrixXf bdbox;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
-  bdbox = model_.get_bdbox();
+  bdbox = model_ptr->get_bdbox();
   cout << bdbox << endl;
   Vector3f model_center =  (bdbox.col(0) + bdbox.col(1))/2;
   Vector3f model_range = bdbox.col(1) - bdbox.col(0);
   // cout << model_range << endl << model_center << endl;
   float scale_factor = 1.0 / max(model_range(0) / window_width, model_range(1)/window_height);
-  Vector3f offset = scale_factor * (- model_center);
-  offset(2) = scale_factor *(- bdbox(2, 0));
-  model_.scale_and_translate(scale_factor, offset);
+  Vector3f offset = scale_factor * (- bdbox.col(0));
+  // offset(2) = scale_factor *(- bdbox(2, 0));
+  model_ptr -> scale_and_translate(scale_factor, offset);
   cout << "after scale and translate" << endl;
-  bdbox = model_.get_bdbox();
+  bdbox = model_ptr -> get_bdbox();
   cout << bdbox << endl;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
 
 #if 1
-  z_buffer_alg solver(model_.tris_.data(), model_.nods_.data(), model_.nods_.cols(), model_.tris_.cols(), window_height);
-  cout << "here" << endl;
-  // auto tri1 = solver.polygen_table_
-  cout << solver.polygen_table_.size() << endl;
-  for(auto i : solver.polygen_table_[250]){
-      cout << i.dy << " ";
-  }
-      
+
+  
 #endif
 
 

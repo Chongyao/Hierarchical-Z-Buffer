@@ -95,7 +95,11 @@ readOBJ.cpp
 ../external/libigl/include/igl/readOBJ.cpp
 
 ../src/model_obj.h
-Eigen/Core
+Eigen/Dense
+-
+memory
+-
+vector
 -
 
 ../src/z_buffer_alg.h
@@ -107,6 +111,8 @@ Eigen/Dense
 -
 memory
 -
+model_obj.h
+../src/model_obj.h
 
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/z_buffer.cpp
 GL/glew.h

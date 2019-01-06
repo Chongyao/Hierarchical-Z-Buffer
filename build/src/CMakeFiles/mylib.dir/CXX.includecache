@@ -41,9 +41,15 @@ algorithm
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.cpp
 model_obj.h
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.h
+geometry.h
+/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.h
 
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.h
-Eigen/Core
+Eigen/Dense
+-
+memory
+-
+vector
 -
 
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.cpp
@@ -63,6 +69,8 @@ Eigen/Dense
 -
 memory
 -
+model_obj.h
+/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.h
 
 /usr/include/eigen3/Eigen/Cholesky
 Core
