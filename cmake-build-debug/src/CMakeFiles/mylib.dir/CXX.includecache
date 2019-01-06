@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../src/frame_buffer.h
-GLFW/glfw3.h
--
-Eigen/Core
--
-vector
--
-iostream
--
-
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/frame_buffer.cpp
-frame_buffer.h
--
-
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.cpp
-geometry.h
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.h
-Eigen/LU
--
-
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.h
 iostream
 -

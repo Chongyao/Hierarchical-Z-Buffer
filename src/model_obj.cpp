@@ -39,8 +39,8 @@ size_t model_obj::get_num_tris() const{
   return num_tris_;
 }
 int model_obj::prepare_for_zbuffer(){
-  
-  Matrix<float, 4, 1>  z_plane;z_plane(2) = 1;
+  proj_verts_.resize(3, nods_.cols());
+  Matrix<float, 4, 1> z_plane =  Matrix<float, 4, 1>::Zero();z_plane(2) = 1;
   project_triangle(nods_, z_plane, proj_verts_);
   dzx_.resize(num_tris_);
   dzy_.resize(num_tris_);
@@ -62,8 +62,7 @@ void model_obj::get_ymax_and_ymin(const size_t& poly_id, size_t& y_max, size_t& 
 }
 
 shared_ptr<vector<float>> model_obj::get_plane(const size_t poly_id) const{
-  shared_ptr<vector<float>> plane;
-  cal_plane_coeff(nods_.col(tris_(0, poly_id)).data(), nods_.col(tris_(1, poly_id)).data(), nods_.col(tris_(2, poly_id)).data());
+  auto plane = cal_plane_coeff(nods_.col(tris_(0, poly_id)).data(), nods_.col(tris_(1, poly_id)).data(), nods_.col(tris_(2, poly_id)).data());
   return plane;
 }
 
@@ -81,7 +80,7 @@ void model_obj::get_edge_info(const size_t& poly_id, const size_t& edge_id, floa
   dx = -(proj_verts_(0, v1) - (proj_verts_(0, v2))) / (proj_verts_(1, v1) - (proj_verts_(1, v2)));
   y_max = static_cast<size_t>(ceil(proj_verts_(1, v1)));
   dy = y_max  - static_cast<size_t>(ceil(proj_verts_(1, v2)));
-  v_id = tris_(v1, poly_id);
+  v_id = v1;
 }
 float model_obj::get_depth(const size_t& vertex_id) const{
   return nods_(2, vertex_id);

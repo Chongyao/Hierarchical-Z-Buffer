@@ -40,18 +40,12 @@ struct active_edge{
   size_t id;
   
 };
-
-
-
-
-
-
 class z_buffer_alg{
  public:
-  z_buffer_alg(const std::shared_ptr<model_obj> model_ptr_, const size_t& range_y);
+  z_buffer_alg(const std::shared_ptr<model_obj> model_ptr, const size_t& range_y);
   int exec(std::vector<float>& frame_buffer, const size_t& num_frames);
   
- private:
+ // private:
   int construct_polygen_table();
   int construct_edge_table();
   int construct_active_polygen_table(); 
@@ -60,7 +54,7 @@ class z_buffer_alg{
   int activate_polygens_and_edges(const size_t& line);
   int updata_active_polys();
   
-  size_t range_y;  
+  size_t range_y_;  
   std::vector<std::vector<polygen>> polygen_table_;
   std::vector<std::vector<edge>> edge_table_;
   std::list<polygen> active_polygen_table_;

@@ -10,7 +10,6 @@ namespace marvel{
 
 
 int z_buffer_alg::construct_polygen_table(){
-  
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
       size_t y_max, y_min;
       model_ptr_ -> get_ymax_and_ymin(i, y_max, y_min);
@@ -33,17 +32,18 @@ int z_buffer_alg::construct_edge_table(){
 }
 
 
-z_buffer_alg::z_buffer_alg(const shared_ptr<model_obj> model_ptr_, const size_t& range_y){
+z_buffer_alg::z_buffer_alg(const shared_ptr<model_obj> model_ptr, const size_t& range_y):range_y_(range_y), model_ptr_(model_ptr){
+  
   color_ptr = make_shared<vector<float>>(3);
   *color_ptr = {0, 255, 255};
-  
-  polygen_table_ = vector<vector<polygen>>(range_y);
-  edge_table_ = vector<vector<edge>>(range_y);
+  polygen_table_ = vector<vector<polygen>>(range_y_);
+  edge_table_ = vector<vector<edge>>(range_y_);
   active_polygen_table_ = list<polygen>(0);
   active_edge_table_ = list<active_edge>(0);
 
-  
+
   construct_polygen_table();
+
   construct_edge_table();
 }
 
@@ -53,7 +53,7 @@ int z_buffer_alg::exec(vector<float>& frame_buffer, const size_t& num_frames){
 
   VectorXf z_buffer = VectorXf::Zero(num_frames);
   
-  for(size_t line = range_y -1 ; line >= 0; --line){
+  for(size_t line = range_y_ -1 ; line >= 0; --line){
     if( !polygen_table_[line].empty() ){
       activate_polygens_and_edges(line);
       

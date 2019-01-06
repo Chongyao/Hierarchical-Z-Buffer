@@ -1,6 +1,6 @@
 #ifndef GEOMETRY_H
 #define GEOMETRY_H
-
+#include <iostream>
 #include <Eigen/Core>
 #include <math.h>
 #include <vector>
@@ -23,8 +23,8 @@ int project_triangle(const Eigen::Matrix<T, -1, -1> &vertices, const Eigen::Matr
           -plane(dim_a) * (plane(dim_b) * vertices(dim_b, i) + plane(dim_c) * vertices(dim_c, i) + plane(3));
     }
   }
-  projected_triangle.row(0) /= plane(0) * plane(0) + plane(1) * plane(1) + plane(2) * plane(2);
-  projected_triangle.row(1) /= plane(0) * plane(0) + plane(1) * plane(1) + plane(2) * plane(2);  
+  projected_triangle /= plane(0) * plane(0) + plane(1) * plane(1) + plane(2) * plane(2);
+
   return 0;
 }
 

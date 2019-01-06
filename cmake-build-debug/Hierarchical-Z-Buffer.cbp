@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Hierarchical-Z-Buffer"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\..\usr\lib\cmake\eigen3\;CMake Files\src\;CMake Files\tests\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mylib">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/libmylib.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 mylib"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mylib/fast">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/libmylib.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 mylib/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_opengl">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/test_opengl" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 test_opengl"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_opengl/fast">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/test_opengl" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 test_opengl/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tri">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/tri" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 tri"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tri/fast">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/tri" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 tri/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c6">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/c6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 c6"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c6/fast">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/c6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 c6/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="z_buffer">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/z_buffer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 z_buffer"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="z_buffer/fast">
+				<Option output="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin/z_buffer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src"/>
+					<Add directory="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/external"/>
+					<Add directory="/usr/include/eigen3"/>
+					<Add directory="/usr/include/SOIL"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 z_buffer/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/frame_buffer.cpp">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/frame_buffer.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.cpp">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.cpp">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.cpp">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/c2_triangle_uniform.cpp">
+			<Option target="tri"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/c6_base.cpp">
+			<Option target="c6"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/test_opengl.cpp">
+			<Option target="test_opengl"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/z_buffer.cpp">
+			<Option target="z_buffer"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/cmake/FindGLM.cmake">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/../../../../../usr/lib/cmake/eigen3/Eigen3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\cmake\eigen3\"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/../../../../../usr/lib/cmake/eigen3/Eigen3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\cmake\eigen3\"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/../../../../../usr/lib/cmake/eigen3/Eigen3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\cmake\eigen3\"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tests\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

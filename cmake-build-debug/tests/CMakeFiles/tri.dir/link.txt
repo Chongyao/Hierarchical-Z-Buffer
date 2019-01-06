@@ -1,0 +1,1 @@
+/usr/bin/c++  -fopenmp -std=c++11 -o3 -fpermissive -DGLEW_STATIC -g  -rdynamic CMakeFiles/tri.dir/c2_triangle_uniform.cpp.o  -o ../bin/tri -lGLEW -lGL -lGLU -lglfw -lsfml-window -lsfml-system -lGLEW -lGL -lGLU -lglfw -lsfml-window -lsfml-system 

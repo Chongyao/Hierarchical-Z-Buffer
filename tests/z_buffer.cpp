@@ -153,6 +153,12 @@ int main(int argc, char** argv) {
 
 #if 1
 
+  model_ptr -> prepare_for_zbuffer();
+  z_buffer_alg solver(model_ptr, window_height);
+  
+  for(auto& i : solver.polygen_table_){
+    cout << i.size() << endl;
+  }
   
 #endif
 
