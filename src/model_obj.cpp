@@ -85,5 +85,12 @@ void model_obj::get_edge_info(const size_t& poly_id, const size_t& edge_id, floa
 float model_obj::get_depth(const size_t& vertex_id) const{
   return nods_(2, vertex_id);
 }
+float model_obj::get_depth_shader_value(const float& z_value) const{
+  assert (z_value < z_max && z_value > 0);
+  return z_value/z_max;
+}
 
+Eigen::Vector3f model_obj::get_color() const{
+  return color_;
+}
 }//namespace

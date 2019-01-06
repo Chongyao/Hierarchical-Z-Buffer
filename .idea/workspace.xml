@@ -15,15 +15,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e53d23c-28e4-405d-8af4-bd4415fac6ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build/bin/z_buffer" beforeDir="false" afterPath="$PROJECT_DIR$/build/bin/z_buffer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/src/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometry.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model_obj.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/model_obj.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/z_buffer_alg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/z_buffer_alg.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/z_buffer_alg.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/z_buffer_alg.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/z_buffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/z_buffer.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="8e53d23c-28e4-405d-8af4-bd4415fac6ce" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +28,7 @@
     <session id="1729545924">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -101,7 +94,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model_obj.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="718">
               <caret line="82" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
@@ -251,12 +244,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546752896645</updated>
-      <workItem from="1546752897923" duration="2434000" />
+      <workItem from="1546752897923" duration="3041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2434000" />
+    <option name="totallyTimeSpent" value="3041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-1" width="1920" height="1080" extended-state="6" />
@@ -273,7 +266,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -331,7 +324,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model_obj.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="718">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>

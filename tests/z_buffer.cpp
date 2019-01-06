@@ -34,12 +34,12 @@ void loadData()
 void clearBuffer()
 {
 	Color clearColor = { 0.0, 1.0, 0.0 };   // clear color: black
-	for (int i = 0; i<window_width*window_height; ++i)
-	{
-		pixels[i * 3] = clearColor.r;
-		pixels[i * 3 + 1] = clearColor.g;
-		pixels[i * 3 + 2] = clearColor.b;
-	}
+	// for (int i = 0; i<window_width*window_height; ++i)
+	// {
+	// 	pixels[i * 3] = clearColor.r;
+	// 	pixels[i * 3 + 1] = clearColor.g;
+	// 	pixels[i * 3 + 2] = clearColor.b;
+	// }
 }
 
 // Draw a point into the frame buffer
@@ -133,8 +133,9 @@ int main(int argc, char** argv) {
   
   surf.transposeInPlace();
   nods.transposeInPlace();
-  
-  shared_ptr<model_obj> model_ptr(new model_obj(surf, nods));
+  Vector3f color;
+  color << 255,255,255;
+  shared_ptr<model_obj> model_ptr(new model_obj(surf, nods, color));
   MatrixXf bdbox;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
   bdbox = model_ptr->get_bdbox();
@@ -154,11 +155,8 @@ int main(int argc, char** argv) {
 #if 1
 
   model_ptr -> prepare_for_zbuffer();
-  z_buffer_alg solver(model_ptr, window_height);
-  
-  for(auto& i : solver.polygen_table_){
-    cout << i.size() << endl;
-  }
+  z_buffer_alg solver(model_ptr, window_height, window_width);
+  solver.exec(pixels, window_height * window_width);
   
 #endif
 

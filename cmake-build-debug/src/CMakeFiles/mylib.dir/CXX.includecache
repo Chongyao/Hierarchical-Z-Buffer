@@ -41,6 +41,8 @@ geometry.h
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.h
 iostream
 -
+cmath
+-
 
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/z_buffer_alg.h
 list
