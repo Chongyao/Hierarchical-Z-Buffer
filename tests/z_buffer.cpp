@@ -32,9 +32,10 @@ void loadData()
 
 // Clear frame buffer
 void clearBuffer()
-{
-	Color clearColor = { 255, 255.0, 0.0 };   // clear color: black
-	// for (int i = 0; i<window_width*window_height; ++i)
+{ 
+	Color clearColor = { 90/255.0 , 178/255.0, 0 };   // clear color: black 
+
+      	// for (int i = 0; i<window_width*window_height; ++i)
 	// {
 	// 	pixels[i * 3] = clearColor.r;
 	// 	pixels[i * 3 + 1] = clearColor.g;
@@ -134,7 +135,8 @@ int main(int argc, char** argv) {
   surf.transposeInPlace();
   nods.transposeInPlace();
   Vector3f color;
-  color << 255.0,255.0,0.0;
+  color << 210,0.0,255.0;
+  color /= 255.0;
   shared_ptr<model_obj> model_ptr(new model_obj(surf, nods, color));
   MatrixXf bdbox;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<

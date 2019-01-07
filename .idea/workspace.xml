@@ -16,16 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e53d23c-28e4-405d-8af4-bd4415fac6ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/bin/z_buffer" beforeDir="false" afterPath="$PROJECT_DIR$/build/bin/z_buffer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/src/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/build/src/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/bin/z_buffer" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/bin/z_buffer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/mylib.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/CMakeFiles/mylib.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model_obj.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/model_obj.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model_obj.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/model_obj.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/z_buffer_alg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/z_buffer_alg.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/z_buffer_alg.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/z_buffer_alg.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/z_buffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/z_buffer.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,12 +40,12 @@
         <counts>
           <entry key="cpp" value="3" />
           <entry key="h" value="5" />
-          <entry key="z_buffer (disassembly)" value="15" />
+          <entry key="z_buffer (disassembly)" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Disassembly" value="15" />
+          <entry key="Disassembly" value="16" />
           <entry key="ObjectiveC" value="8" />
         </counts>
       </usages-collector>
@@ -120,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/z_buffer_alg.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="185" selection-start-line="185" selection-end-line="185" />
+            <state relative-caret-position="266">
+              <caret line="207" selection-start-line="207" selection-end-line="207" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -286,12 +277,12 @@
       <option name="presentableId" value="Default" />
       <updated>1546752896645</updated>
       <workItem from="1546752897923" duration="3041000" />
-      <workItem from="1546771232847" duration="16699000" />
+      <workItem from="1546771232847" duration="17405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19740000" />
+    <option name="totallyTimeSpent" value="20446000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-1" width="1920" height="1080" extended-state="6" />
@@ -409,8 +400,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/z_buffer_alg.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="185" selection-start-line="185" selection-end-line="185" />
+        <state relative-caret-position="266">
+          <caret line="207" selection-start-line="207" selection-end-line="207" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

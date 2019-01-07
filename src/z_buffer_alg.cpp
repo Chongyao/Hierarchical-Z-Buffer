@@ -203,9 +203,9 @@ int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, c
     }
     // cout << "end is : " << end << " begin is : " << begin << endl;
     assert(end >= begin);
-    for(size_t i = begin; i < end; ++i){
+    for(size_t i = begin; i <= end; ++i){
       auto new_z_value = edge_pair.zl + (i - begin) * edge_pair.dzx;
-      assert(new_z_value >= 0);
+      // assert(new_z_value >= 0);
       if(new_z_value > z_buffer[i]){
         z_buffer[i] = new_z_value;
         map_frame_buffer.col(line * range_x_  + i) = model_ptr_ -> get_color() * model_ptr_ -> get_depth_shader_value(new_z_value, edge_pair.id);

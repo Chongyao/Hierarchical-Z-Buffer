@@ -1,6 +1,7 @@
 #include "model_obj.h"
 #include "geometry.h"
 #include <limits>
+#include <cmath>
 using namespace std;
 using namespace Eigen;
 static const float max_float = numeric_limits<float>::max();
@@ -62,7 +63,7 @@ int model_obj::prepare_for_zbuffer(){
     if(   fabs((*plane)[2]) > 1e-5){
       dzx_[i] = -(*plane)[0] / (*plane)[2];
       dzy_[i] =  (*plane)[1] / (*plane)[2];
-      shader_[i] = (*plane)[2]/( (*plane)[0] * (*plane)[0] + (*plane)[1] * (*plane)[1] + (*plane)[2] * (*plane)[2] );
+      shader_[i] = (*plane)[2]/sqrt( (*plane)[0] * (*plane)[0] + (*plane)[1] * (*plane)[1] + (*plane)[2] * (*plane)[2] );
     }
     else{
       dzx_[i] = max_float;
@@ -72,8 +73,6 @@ int model_obj::prepare_for_zbuffer(){
 
 
   }
-  if_prepared_ = true;
-
 }
 
 
@@ -113,12 +112,20 @@ float model_obj::get_depth(const size_t& vertex_id) const{
   return nods_(2, vertex_id);
 }
 float model_obj::get_depth_shader_value(const float& z_value, const size_t& poly_id) const{
-  // if(z_value > z_max || z_value < 0)
+  // if(z_value > z_max || z_value < 0){
   //   cout << z_value << " " << z_max << endl;
+  //   return 1;
+  // }
+
   // assert (z_value <= z_max && z_value >= 0);
   
-  // return (z_max- z_value) / z_range;
+  // auto factor = 1- (z_max- z_value) / z_range;
+
+  // return factor;
+  // return  (1-factor)*shader_[poly_id] + factor;
+  
   return shader_[poly_id];
+  
 }
 
 Eigen::Vector3f model_obj::get_color() const{

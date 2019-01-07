@@ -47,6 +47,8 @@ geometry.h
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/geometry.h
 limits
 -
+cmath
+-
 
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/src/model_obj.h
 Eigen/Dense
