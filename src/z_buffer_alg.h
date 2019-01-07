@@ -11,10 +11,9 @@ namespace marvel{
 
 
 struct polygen{
-  // std::shared_ptr<std::vector<float>> plane_ptr;
   size_t id;
   int dy;
-  // std::shared_ptr<std::vector<float>> color_ptr;
+
 };
 
 struct edge{
@@ -64,7 +63,7 @@ class z_buffer_alg{
   std::list<active_edge> active_edge_table_;
   //TODO:expand it to vector
   std::shared_ptr<model_obj> model_ptr_;
-  std::shared_ptr<std::vector<float>> color_ptr;
+
 };
 
 

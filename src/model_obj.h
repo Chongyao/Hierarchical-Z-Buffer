@@ -25,18 +25,17 @@ class model_obj{
   float get_depth(const size_t& vertex_id) const;
   float get_depth_shader_value(const float& z_value, const size_t& poly_id)const;
   Eigen::Vector3f get_color() const;
- // protected:
-  float z_max;
-  float z_range;
+ protected:
   size_t num_tris_;
   Eigen::MatrixXi tris_;
   Eigen::MatrixXf nods_;
-  Eigen::MatrixXf proj_verts_;
+  Eigen::Vector3f color_;
+  
   std::vector<float> dzx_;
   std::vector<float> dzy_;
   std::vector<float> shader_;
   bool if_prepared_;
-  Eigen::Vector3f color_;
+
 
   void set_verts_to_pixels();
   

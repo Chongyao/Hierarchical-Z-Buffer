@@ -44,20 +44,12 @@ size_t model_obj::get_num_tris() const{
 int model_obj::prepare_for_zbuffer(){
   set_verts_to_pixels();
   
-  z_max = nods_.row(2).maxCoeff() ;
-  z_range = z_max - nods_.row(2).minCoeff();
-  
-  proj_verts_.resize(3, nods_.cols());
-  Matrix<float, 4, 1> z_plane =  Matrix<float, 4, 1>::Zero();z_plane(2) = 1;
-  project_triangle(nods_, z_plane, proj_verts_);
-
-  //project to z=0 don't change x and y
-  proj_verts_ = nods_;
   
   
   dzx_.resize(num_tris_);
   dzy_.resize(num_tris_);
   shader_.resize(num_tris_);
+  #pragma parallel omp for
   for(size_t i = 0; i < num_tris_; ++i){
     auto plane = get_plane(i);
     if(   fabs((*plane)[2]) > 1e-5){
@@ -70,15 +62,16 @@ int model_obj::prepare_for_zbuffer(){
       dzy_[i] = max_float;
       shader_[i] = 0;
     }
-
-
   }
+
+  if_prepared_ = true;
+  
 }
 
 
 void model_obj::get_ymax_and_ymin(const size_t& poly_id, size_t& y_max, size_t& y_min) const{
   float max, min;
-  get_max_min(proj_verts_(1, tris_(0, poly_id)), proj_verts_(1, tris_(1, poly_id)), proj_verts_(1, tris_(2, poly_id)), max, min);
+  get_max_min(nods_(1, tris_(0, poly_id)), nods_(1, tris_(1, poly_id)), nods_(1, tris_(2, poly_id)), max, min);
   y_max = static_cast<int>(round(max));
   y_min = static_cast<int>(round(min));  
 }
@@ -92,40 +85,27 @@ void model_obj::get_edge_info(const size_t& poly_id, const size_t& edge_id, floa
   size_t v1 = tris_(edge_id % 3, poly_id);
   size_t v2 = tris_(( edge_id  + 1 ) % 3, poly_id);
   //set v1 max and v2 min
-  if (proj_verts_(1, v1) < proj_verts_(1, v2)){
+  if (nods_(1, v1) < nods_(1, v2)){
     auto temp = v1;
     v1 = v2;
     v2 = temp;
   }
   
-  top_x_coor = proj_verts_(0, v1);
-  if( fabs((proj_verts_(1, v1) - proj_verts_(1, v2))) > 1e-5)
-    dx = -(proj_verts_(0, v1) - (proj_verts_(0, v2))) / (proj_verts_(1, v1) - proj_verts_(1, v2));
+  top_x_coor = nods_(0, v1);
+  if( fabs((nods_(1, v1) - nods_(1, v2))) > 1e-5)
+    dx = -(nods_(0, v1) - (nods_(0, v2))) / (nods_(1, v1) - nods_(1, v2));
   else
     dx = max_float;
   
-  y_max = static_cast<int>(round(proj_verts_(1, v1)));
-  dy = y_max  - static_cast<int>(round(proj_verts_(1, v2)));
+  y_max = static_cast<int>(round(nods_(1, v1)));
+  dy = y_max  - static_cast<int>(round(nods_(1, v2)));
   v_id = v1;
 }
 float model_obj::get_depth(const size_t& vertex_id) const{
   return nods_(2, vertex_id);
 }
 float model_obj::get_depth_shader_value(const float& z_value, const size_t& poly_id) const{
-  // if(z_value > z_max || z_value < 0){
-  //   cout << z_value << " " << z_max << endl;
-  //   return 1;
-  // }
-
-  // assert (z_value <= z_max && z_value >= 0);
-  
-  // auto factor = 1- (z_max- z_value) / z_range;
-
-  // return factor;
-  // return  (1-factor)*shader_[poly_id] + factor;
-  
   return shader_[poly_id];
-  
 }
 
 Eigen::Vector3f model_obj::get_color() const{
@@ -133,6 +113,7 @@ Eigen::Vector3f model_obj::get_color() const{
 }
 
 void model_obj::set_verts_to_pixels(){
+  #pragma parallel omp for
   for(size_t i = 0; i < nods_.size(); ++i){
     nods_(i) = round(nods_(i));
   }

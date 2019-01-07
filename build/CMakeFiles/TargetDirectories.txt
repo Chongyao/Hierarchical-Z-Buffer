@@ -3,9 +3,6 @@
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/rebuild_cache.dir
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/mylib.dir
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/edit_cache.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/edit_cache.dir
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/rebuild_cache.dir
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/z_buffer.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/c6.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/test_opengl.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/tri.dir
+/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/edit_cache.dir

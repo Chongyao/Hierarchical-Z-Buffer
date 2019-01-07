@@ -17,7 +17,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src"
   "../external"
   "/usr/include/eigen3"
-  "/usr/include/SOIL"
   )
 
 # Targets to which this target links.

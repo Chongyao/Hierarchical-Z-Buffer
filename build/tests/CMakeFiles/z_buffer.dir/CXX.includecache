@@ -133,6 +133,8 @@ model_obj.h
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/model_obj.h
 z_buffer_alg.h
 /home/zcy/Documents/projects/Hierarchical-Z-Buffer/tests/z_buffer_alg.h
+chrono
+-
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

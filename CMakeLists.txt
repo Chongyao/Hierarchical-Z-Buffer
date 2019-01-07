@@ -11,6 +11,15 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 include_directories(${PROJECT_SOURCE_DIR}/external)
 
 
+#OPENMP
+find_package(OpenMP REQUIRED)
+if (OPENMP_FOUND)
+  set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+  set (CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+endif()
+
+
 # BOOST
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
@@ -22,12 +31,6 @@ if(Boost_FOUND)
 endif(Boost_FOUND)
 
 
-#GLM
-find_package(GLM REQUIRED)
-if(GLM_FOUND)
-  message("FIND GLM")
-  include_directories(${GLM_INCLUDE_DIR})
-endif(EIGEN3_FOUND)
 
 # EIGEN3
 find_package(Eigen3 REQUIRED)
@@ -54,20 +57,8 @@ include_directories(${GLFW_INCLUDE_DIRS})
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIRS})
 
-#SFM
-set(sfml-system /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.4)
-set(sfml-window /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.4)
-# pkg_search_module(GLFW REQUIRED sfml)
-# include_directories(${SFML_INCLUDE_DIRS})
-# add_subdirectory(src)
 
-#SOIL
-set(SOIL_INCLUDE_DIRS /usr/include/SOIL/)
-include_directories(${SOIL_INCLUDE_DIRS})
-set(SOIL_LIBRARIES /usr/lib/libSOIL.so)
 
-#GLUT
-set(GLUT_LIBRARIES /usr/lib/x86_64-linux-gnu/libglut.so)
 
 
 

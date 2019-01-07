@@ -9,9 +9,12 @@
 
 #include "model_obj.h"
 #include "z_buffer_alg.h"
+
+#include <chrono>
 using namespace std;
 using namespace Eigen;
 using namespace marvel;
+using namespace chrono;
 
 
 
@@ -102,7 +105,8 @@ void errorCallback(int error, const char* description)
 }
 
 int main(int argc, char** argv) {
-
+  auto start = system_clock::now();
+  
   Eigen::initParallel();
   cout << "[INFO]>>>>>>>>>>>>>>>>>>>Eigen parallel<<<<<<<<<<<<<<<<<<" << endl;
   cout << "enable parallel in Eigen in " << nbThreads() << " threads" << endl;
@@ -130,18 +134,18 @@ int main(int argc, char** argv) {
   MatrixXf nods;
   
   igl::readOBJ((indir+mesh_name+".obj").c_str(), nods, surf);
-  cout << "surf: " << surf.rows() << " " << surf.cols() << endl << "nods: " << nods.rows() << " " << nods.cols() << endl;
+  cout << "faces num : " << surf.rows() << endl << "vertices num : " << nods.rows() << endl;;
   
   surf.transposeInPlace();
   nods.transposeInPlace();
   Vector3f color;
-  color << 210,0.0,255.0;
+  color << 241,169.0,255.0;
   color /= 255.0;
   shared_ptr<model_obj> model_ptr(new model_obj(surf, nods, color));
   MatrixXf bdbox;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
   bdbox = model_ptr->get_bdbox();
-  cout << bdbox << endl;
+
   Vector3f model_center =  (bdbox.col(0) + bdbox.col(1))/2;
   Vector3f model_range = bdbox.col(1) - bdbox.col(0);
   // cout << model_range << endl << model_center << endl;
@@ -150,26 +154,19 @@ int main(int argc, char** argv) {
   Vector3f offset = scale_factor * (- bdbox.col(0)) + (1 - screen_range) * screen_ / 2  ;
   // offset(2) = scale_factor *(- bdbox(2, 0));
   model_ptr -> scale_and_translate(scale_factor, offset);
-  cout << "after scale and translate" << endl;
-  bdbox = model_ptr -> get_bdbox();
-  cout << bdbox << endl;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
 
-#if 1
 
   model_ptr -> prepare_for_zbuffer();
   z_buffer_alg solver(model_ptr, window_height, window_width);
   solver.exec(pixels);
-
-  size_t count = 0;
-  for(size_t i = 0; i < window_width*window_height * 3; ++i){
-    if (pixels[i] != 0)
-      ++count;
-  }
-  cout << "pixels not zero num is : " << count << endl;;
+  auto end = system_clock::now();
+  auto duration = duration_cast<microseconds>(end - start);
+  cout <<  "花费了" 
+       << double(duration.count()) * microseconds::period::num / microseconds::period::den 
+       << "秒" << endl;
 
   
-#endif
 
 
 

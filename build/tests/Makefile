@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -125,132 +125,6 @@ z_buffer/fast:
 	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/z_buffer.dir/build.make tests/CMakeFiles/z_buffer.dir/build
 .PHONY : z_buffer/fast
 
-# Convenience name for target.
-tests/CMakeFiles/c6.dir/rule:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/c6.dir/rule
-.PHONY : tests/CMakeFiles/c6.dir/rule
-
-# Convenience name for target.
-c6: tests/CMakeFiles/c6.dir/rule
-
-.PHONY : c6
-
-# fast build rule for target.
-c6/fast:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/build
-.PHONY : c6/fast
-
-# Convenience name for target.
-tests/CMakeFiles/test_opengl.dir/rule:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_opengl.dir/rule
-.PHONY : tests/CMakeFiles/test_opengl.dir/rule
-
-# Convenience name for target.
-test_opengl: tests/CMakeFiles/test_opengl.dir/rule
-
-.PHONY : test_opengl
-
-# fast build rule for target.
-test_opengl/fast:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/build
-.PHONY : test_opengl/fast
-
-# Convenience name for target.
-tests/CMakeFiles/tri.dir/rule:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/tri.dir/rule
-.PHONY : tests/CMakeFiles/tri.dir/rule
-
-# Convenience name for target.
-tri: tests/CMakeFiles/tri.dir/rule
-
-.PHONY : tri
-
-# fast build rule for target.
-tri/fast:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/build
-.PHONY : tri/fast
-
-c2_triangle_uniform.o: c2_triangle_uniform.cpp.o
-
-.PHONY : c2_triangle_uniform.o
-
-# target to build an object file
-c2_triangle_uniform.cpp.o:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/c2_triangle_uniform.cpp.o
-.PHONY : c2_triangle_uniform.cpp.o
-
-c2_triangle_uniform.i: c2_triangle_uniform.cpp.i
-
-.PHONY : c2_triangle_uniform.i
-
-# target to preprocess a source file
-c2_triangle_uniform.cpp.i:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/c2_triangle_uniform.cpp.i
-.PHONY : c2_triangle_uniform.cpp.i
-
-c2_triangle_uniform.s: c2_triangle_uniform.cpp.s
-
-.PHONY : c2_triangle_uniform.s
-
-# target to generate assembly for a file
-c2_triangle_uniform.cpp.s:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/c2_triangle_uniform.cpp.s
-.PHONY : c2_triangle_uniform.cpp.s
-
-c6_base.o: c6_base.cpp.o
-
-.PHONY : c6_base.o
-
-# target to build an object file
-c6_base.cpp.o:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/c6_base.cpp.o
-.PHONY : c6_base.cpp.o
-
-c6_base.i: c6_base.cpp.i
-
-.PHONY : c6_base.i
-
-# target to preprocess a source file
-c6_base.cpp.i:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/c6_base.cpp.i
-.PHONY : c6_base.cpp.i
-
-c6_base.s: c6_base.cpp.s
-
-.PHONY : c6_base.s
-
-# target to generate assembly for a file
-c6_base.cpp.s:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/c6_base.cpp.s
-.PHONY : c6_base.cpp.s
-
-test_opengl.o: test_opengl.cpp.o
-
-.PHONY : test_opengl.o
-
-# target to build an object file
-test_opengl.cpp.o:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/test_opengl.cpp.o
-.PHONY : test_opengl.cpp.o
-
-test_opengl.i: test_opengl.cpp.i
-
-.PHONY : test_opengl.i
-
-# target to preprocess a source file
-test_opengl.cpp.i:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/test_opengl.cpp.i
-.PHONY : test_opengl.cpp.i
-
-test_opengl.s: test_opengl.cpp.s
-
-.PHONY : test_opengl.s
-
-# target to generate assembly for a file
-test_opengl.cpp.s:
-	cd /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build && $(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/test_opengl.cpp.s
-.PHONY : test_opengl.cpp.s
-
 z_buffer.o: z_buffer.cpp.o
 
 .PHONY : z_buffer.o
@@ -284,21 +158,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... z_buffer"
-	@echo "... c6"
-	@echo "... test_opengl"
-	@echo "... tri"
-	@echo "... c2_triangle_uniform.o"
-	@echo "... c2_triangle_uniform.i"
-	@echo "... c2_triangle_uniform.s"
-	@echo "... c6_base.o"
-	@echo "... c6_base.i"
-	@echo "... c6_base.s"
-	@echo "... test_opengl.o"
-	@echo "... test_opengl.i"
-	@echo "... test_opengl.s"
+	@echo "... edit_cache"
 	@echo "... z_buffer.o"
 	@echo "... z_buffer.i"
 	@echo "... z_buffer.s"

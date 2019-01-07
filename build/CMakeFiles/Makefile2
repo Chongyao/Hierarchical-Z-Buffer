@@ -84,7 +84,7 @@ src/preinstall:
 src/CMakeFiles/mylib.dir/all:
 	$(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/depend
 	$(MAKE) -f src/CMakeFiles/mylib.dir/build.make src/CMakeFiles/mylib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=3,4,5,6,7 "Built target mylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target mylib"
 .PHONY : src/CMakeFiles/mylib.dir/all
 
 # Include target in all.
@@ -119,17 +119,11 @@ clean: src/CMakeFiles/mylib.dir/clean
 
 # Convenience name for "all" pass in the directory.
 tests/all: tests/CMakeFiles/z_buffer.dir/all
-tests/all: tests/CMakeFiles/c6.dir/all
-tests/all: tests/CMakeFiles/test_opengl.dir/all
-tests/all: tests/CMakeFiles/tri.dir/all
 
 .PHONY : tests/all
 
 # Convenience name for "clean" pass in the directory.
 tests/clean: tests/CMakeFiles/z_buffer.dir/clean
-tests/clean: tests/CMakeFiles/c6.dir/clean
-tests/clean: tests/CMakeFiles/test_opengl.dir/clean
-tests/clean: tests/CMakeFiles/tri.dir/clean
 
 .PHONY : tests/clean
 
@@ -145,7 +139,7 @@ tests/preinstall:
 tests/CMakeFiles/z_buffer.dir/all: src/CMakeFiles/mylib.dir/all
 	$(MAKE) -f tests/CMakeFiles/z_buffer.dir/build.make tests/CMakeFiles/z_buffer.dir/depend
 	$(MAKE) -f tests/CMakeFiles/z_buffer.dir/build.make tests/CMakeFiles/z_buffer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=12,13 "Built target z_buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=6,7 "Built target z_buffer"
 .PHONY : tests/CMakeFiles/z_buffer.dir/all
 
 # Include target in all.
@@ -172,117 +166,6 @@ tests/CMakeFiles/z_buffer.dir/clean:
 
 # clean rule for target.
 clean: tests/CMakeFiles/z_buffer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tests/CMakeFiles/c6.dir
-
-# All Build rule for target.
-tests/CMakeFiles/c6.dir/all:
-	$(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/depend
-	$(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=1,2 "Built target c6"
-.PHONY : tests/CMakeFiles/c6.dir/all
-
-# Include target in all.
-all: tests/CMakeFiles/c6.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-tests/CMakeFiles/c6.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/c6.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/c6.dir/rule
-
-# Convenience name for target.
-c6: tests/CMakeFiles/c6.dir/rule
-
-.PHONY : c6
-
-# clean rule for target.
-tests/CMakeFiles/c6.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/clean
-.PHONY : tests/CMakeFiles/c6.dir/clean
-
-# clean rule for target.
-clean: tests/CMakeFiles/c6.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tests/CMakeFiles/test_opengl.dir
-
-# All Build rule for target.
-tests/CMakeFiles/test_opengl.dir/all:
-	$(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/depend
-	$(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=8,9 "Built target test_opengl"
-.PHONY : tests/CMakeFiles/test_opengl.dir/all
-
-# Include target in all.
-all: tests/CMakeFiles/test_opengl.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-tests/CMakeFiles/test_opengl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_opengl.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/test_opengl.dir/rule
-
-# Convenience name for target.
-test_opengl: tests/CMakeFiles/test_opengl.dir/rule
-
-.PHONY : test_opengl
-
-# clean rule for target.
-tests/CMakeFiles/test_opengl.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/clean
-.PHONY : tests/CMakeFiles/test_opengl.dir/clean
-
-# clean rule for target.
-clean: tests/CMakeFiles/test_opengl.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target tests/CMakeFiles/tri.dir
-
-# All Build rule for target.
-tests/CMakeFiles/tri.dir/all:
-	$(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/depend
-	$(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles --progress-num=10,11 "Built target tri"
-.PHONY : tests/CMakeFiles/tri.dir/all
-
-# Include target in all.
-all: tests/CMakeFiles/tri.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-tests/CMakeFiles/tri.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/tri.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles 0
-.PHONY : tests/CMakeFiles/tri.dir/rule
-
-# Convenience name for target.
-tri: tests/CMakeFiles/tri.dir/rule
-
-.PHONY : tri
-
-# clean rule for target.
-tests/CMakeFiles/tri.dir/clean:
-	$(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/clean
-.PHONY : tests/CMakeFiles/tri.dir/clean
-
-# clean rule for target.
-clean: tests/CMakeFiles/tri.dir/clean
 
 .PHONY : clean
 

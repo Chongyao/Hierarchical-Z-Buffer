@@ -13,7 +13,7 @@ static const float max_float = numeric_limits<float>::max();
 
 
 int z_buffer_alg::construct_polygen_table(){
-  size_t valid_polys_num = 0;
+  #pragma parallel omp for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
     //exculde the plane vertical to z=0
     if(model_ptr_ -> get_dzx(i) == max_float)
@@ -21,15 +21,13 @@ int z_buffer_alg::construct_polygen_table(){
     size_t y_max, y_min;
     model_ptr_ -> get_ymax_and_ymin(i, y_max, y_min);
     
-    polygen_table_[y_max].push_back({i, y_max - y_min});
-    ++valid_polys_num;
+    polygen_table_[y_max].push_back({i, static_cast<int>(y_max - y_min) });
   }
-  cout << "valid polys num is " << valid_polys_num << endl;
 
 }
   
 int z_buffer_alg::construct_edge_table(){
-
+  #pragma parallel omp for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
     if(model_ptr_ -> get_dzx(i) == max_float)
       continue;
@@ -69,9 +67,7 @@ int z_buffer_alg::exec(float* frame_buffer){
 
   
   vector<float> z_buffer(range_x_);
-  cout << "range y is " << range_y_ << endl;
   for(int line = range_y_ -1 ; line >= 0; --line){
-    cout << "line is " << line << endl << endl; 
     fill(z_buffer.data(), z_buffer.data() + z_buffer.size(), 0);
     
     if( !polygen_table_[line].empty() ){
@@ -174,14 +170,7 @@ int z_buffer_alg::update_active_edges(const size_t& line){
   
     edge_it->xl += edge_it->dxl;
     edge_it->xr += edge_it->dxr;
-    // if(edge_it->xl - edge_it->xr  > 0){
-      
-    //   cout << "xl is " << edge_it -> xl << " xr is " << edge_it->xr << ""<<edge_it -> xl - edge_it -> xr << endl;
-    //   cout << model_ptr_->nods_.col(model_ptr_->tris_(0, edge_it->id)) << " " <<
-    //       model_ptr_->nods_.col(model_ptr_->tris_(1, edge_it->id)) << " "<<
-    //       model_ptr_->nods_.col(model_ptr_->tris_(2, edge_it->id)) << endl;
-    // }
-    // assert(edge_it->xl <=  edge_it->xr );
+
     edge_it->zl = edge_it->zl + edge_it->dzx * edge_it->dxl + edge_it->dzy;
     ++edge_it;
   }
@@ -189,19 +178,10 @@ int z_buffer_alg::update_active_edges(const size_t& line){
 
 int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, const size_t& line){
   Map<MatrixXf> map_frame_buffer(frame_buffer, 3, range_y_ * range_x_);
-  size_t count = 0;
+    #pragma parallel omp for
   for(auto& edge_pair : active_edge_table_){
     auto begin = static_cast<size_t>(round(edge_pair.xl));
     auto end = static_cast<size_t>(round(edge_pair.xr));
-    count += end - begin;
-    if(end < begin)
-    {
-      cout << "xl is " << edge_pair. xl << " xr is " << edge_pair.xr <<endl;
-      cout << model_ptr_->nods_.col(model_ptr_->tris_(0, edge_pair.id)) << " " <<
-          model_ptr_->nods_.col(model_ptr_->tris_(1, edge_pair.id)) << " "<<
-          model_ptr_->nods_.col(model_ptr_->tris_(2, edge_pair.id)) << endl;
-    }
-    // cout << "end is : " << end << " begin is : " << begin << endl;
     assert(end >= begin);
     for(size_t i = begin; i <= end; ++i){
       auto new_z_value = edge_pair.zl + (i - begin) * edge_pair.dzx;
@@ -214,7 +194,6 @@ int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, c
     }
   }
   
-  // cout << count << endl;
   
 }
 

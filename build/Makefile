@@ -136,45 +136,6 @@ z_buffer/fast:
 	$(MAKE) -f tests/CMakeFiles/z_buffer.dir/build.make tests/CMakeFiles/z_buffer.dir/build
 .PHONY : z_buffer/fast
 
-#=============================================================================
-# Target rules for targets named c6
-
-# Build rule for target.
-c6: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 c6
-.PHONY : c6
-
-# fast build rule for target.
-c6/fast:
-	$(MAKE) -f tests/CMakeFiles/c6.dir/build.make tests/CMakeFiles/c6.dir/build
-.PHONY : c6/fast
-
-#=============================================================================
-# Target rules for targets named test_opengl
-
-# Build rule for target.
-test_opengl: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_opengl
-.PHONY : test_opengl
-
-# fast build rule for target.
-test_opengl/fast:
-	$(MAKE) -f tests/CMakeFiles/test_opengl.dir/build.make tests/CMakeFiles/test_opengl.dir/build
-.PHONY : test_opengl/fast
-
-#=============================================================================
-# Target rules for targets named tri
-
-# Build rule for target.
-tri: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tri
-.PHONY : tri
-
-# fast build rule for target.
-tri/fast:
-	$(MAKE) -f tests/CMakeFiles/tri.dir/build.make tests/CMakeFiles/tri.dir/build
-.PHONY : tri/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -185,9 +146,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... mylib"
 	@echo "... z_buffer"
-	@echo "... c6"
-	@echo "... test_opengl"
-	@echo "... tri"
 .PHONY : help
 
 
