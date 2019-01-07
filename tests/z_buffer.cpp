@@ -15,7 +15,7 @@ using namespace marvel;
 
 
 
-
+static float screen_range = 0.75;
 static int window_width = 512, window_height = 512;
 static float* pixels = new float[window_width * window_height * 3];
 
@@ -33,7 +33,7 @@ void loadData()
 // Clear frame buffer
 void clearBuffer()
 {
-	Color clearColor = { 0.0, 1.0, 0.0 };   // clear color: black
+	Color clearColor = { 255, 255.0, 0.0 };   // clear color: black
 	// for (int i = 0; i<window_width*window_height; ++i)
 	// {
 	// 	pixels[i * 3] = clearColor.r;
@@ -134,7 +134,7 @@ int main(int argc, char** argv) {
   surf.transposeInPlace();
   nods.transposeInPlace();
   Vector3f color;
-  color << 255,255,255;
+  color << 255.0,255.0,0.0;
   shared_ptr<model_obj> model_ptr(new model_obj(surf, nods, color));
   MatrixXf bdbox;
   //>>>>>>>>>>>scale and translate model<<<<<<<<<<
@@ -143,8 +143,9 @@ int main(int argc, char** argv) {
   Vector3f model_center =  (bdbox.col(0) + bdbox.col(1))/2;
   Vector3f model_range = bdbox.col(1) - bdbox.col(0);
   // cout << model_range << endl << model_center << endl;
-  float scale_factor = 1.0 / max(model_range(0) / window_width, model_range(1)/window_height);
-  Vector3f offset = scale_factor * (- bdbox.col(0));
+  float scale_factor = 1.0 / max(model_range(0) / window_width/screen_range, model_range(1)/window_height/screen_range);
+  Vector3f screen_;screen_ << window_width, window_height ,0;
+  Vector3f offset = scale_factor * (- bdbox.col(0)) + (1 - screen_range) * screen_ / 2  ;
   // offset(2) = scale_factor *(- bdbox(2, 0));
   model_ptr -> scale_and_translate(scale_factor, offset);
   cout << "after scale and translate" << endl;
@@ -156,7 +157,15 @@ int main(int argc, char** argv) {
 
   model_ptr -> prepare_for_zbuffer();
   z_buffer_alg solver(model_ptr, window_height, window_width);
-  solver.exec(pixels, window_height * window_width);
+  solver.exec(pixels);
+
+  size_t count = 0;
+  for(size_t i = 0; i < window_width*window_height * 3; ++i){
+    if (pixels[i] != 0)
+      ++count;
+  }
+  cout << "pixels not zero num is : " << count << endl;;
+
   
 #endif
 
