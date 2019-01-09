@@ -39,10 +39,25 @@ struct active_edge{
   size_t id;
   
 };
+
+
+struct break_point{
+  break_point(const size_t& x_, const bool if_left_, const size_t& id_):x(x_), if_left(if_left_), edge_id(id_){}
+  size_t x;
+  bool if_left;
+  size_t edge_id;
+  
+
+  
+  bool operator < (const break_point& other) const{
+    return x < other.x;
+  }
+};
+
 class z_buffer_alg{
  public:
   z_buffer_alg(const std::shared_ptr<model_obj> model_ptr, const size_t& range_y, const size_t& range_x);
-  int exec(float* frame_buffer);
+  int exec(float* frame_buffer, bool if_section);
   
  private:
   int construct_polygen_table();
@@ -52,6 +67,7 @@ class z_buffer_alg{
   
   int activate_polygens_and_edges(const size_t& line);
   int update_buffers(std::vector<float>& z_buffer, float* frame_buffer, const size_t& line);
+  int section_update_buffers(std::vector<float>& z_buffer, float* frame_buffer, const size_t& line);
   int update_active_edges(const size_t& line);
   int update_active_polys();
   

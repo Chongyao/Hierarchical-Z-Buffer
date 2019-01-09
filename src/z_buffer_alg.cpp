@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cmath>
 #include <limits>
+#include <set>
 using namespace std;
 using namespace Eigen;
 
@@ -16,7 +17,7 @@ int z_buffer_alg::construct_polygen_table(){
   #pragma parallel omp for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
     //exculde the plane vertical to z=0
-    if(model_ptr_ -> get_depth_shader_value(0, i) < 0 || model_ptr_ -> get_dzx(i) == max_float)
+    if(model_ptr_ -> get_dzx(i) == max_float)
       continue;
     size_t y_max, y_min;
     model_ptr_ -> get_ymax_and_ymin(i, y_max, y_min);
@@ -63,7 +64,7 @@ z_buffer_alg::z_buffer_alg(const shared_ptr<model_obj> model_ptr, const size_t& 
   construct_edge_table();
 }
 
-int z_buffer_alg::exec(float* frame_buffer){
+int z_buffer_alg::exec(float* frame_buffer, bool if_section){
 
   
   vector<float> z_buffer(range_x_);
@@ -73,7 +74,10 @@ int z_buffer_alg::exec(float* frame_buffer){
     if( !polygen_table_[line].empty() ){
       activate_polygens_and_edges(line);
     }
-    update_buffers(z_buffer, frame_buffer, line);
+    if(if_section)
+      section_update_buffers(z_buffer, frame_buffer, line);
+    else
+      update_buffers(z_buffer, frame_buffer, line);
     update_active_edges(line);
     update_active_polys();
   }
@@ -194,8 +198,70 @@ int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, c
     }
   }
   
-  
+  return 0;
 }
+int z_buffer_alg::section_update_buffers(vector<float>& z_buffer, float* frame_buffer, const size_t& line){
+  Map<MatrixXf> map_frame_buffer(frame_buffer, 3, range_y_ * range_x_);
+
+  cout << "line " << line << endl;
+  multiset<break_point> section;
+  set<size_t> in_pairs;
+  
+  size_t edge_id = 0;
+  for(auto& edge_pair : active_edge_table_){
+    auto xl = static_cast<size_t>(round(edge_pair.xl));
+    auto xr = static_cast<size_t>(round(edge_pair.xr));
+    if( xl!= xr){
+      section.insert({xl, true, edge_id});
+      section.insert({xr, false, edge_id});
+    }
+    ++edge_id;      
+  }
+  
+  for(auto l_bound = section.begin(); l_bound != section.end(); ++ l_bound){
+
+    auto r_bound = l_bound;
+    bool at_end = false;
+    while(r_bound->x == l_bound->x){
+      l_bound = r_bound;
+      r_bound = next(l_bound, 1);
+      if(r_bound == section.end()){
+        at_end = true;
+        break;
+      }
+        
+      if(l_bound->if_left)
+        in_pairs.insert(l_bound->edge_id);
+      else
+        in_pairs.erase(l_bound->edge_id);
+    }
+    if(at_end)
+      break;
+
+    size_t left_pix = static_cast<size_t>(l_bound->x);
+    size_t right_pix = static_cast<size_t>(r_bound->x);
+    assert(right_pix >= left_pix);
+    
+    //compare to get domain poly
+    int max_z = 0;
+    int domain_poly_id = -1;
+    for(auto pair_iter = in_pairs.begin(); pair_iter != in_pairs.end(); ++pair_iter){
+      
+      auto edge_pair = active_edge_table_.begin();
+      advance(edge_pair, *pair_iter);
+      float new_z = edge_pair->zl + (left_pix + 1 - static_cast<int>(edge_pair->xl)) * edge_pair->dzx;
+      if(new_z > max_z){
+        max_z = new_z;
+        domain_poly_id = edge_pair->id;
+      }
+    }
+    //TODO pre calculated the color
+    //TODO  optimize the get_depth_shader_value
+    map_frame_buffer.block(0, line * range_x_ + left_pix, 3, right_pix - left_pix + 1) = model_ptr_ -> get_color() * model_ptr_ -> get_depth_shader_value(0, domain_poly_id) * MatrixXf::Ones(1, right_pix - left_pix + 1);
+  }
+  return 0;
+}
+  
 
 
 

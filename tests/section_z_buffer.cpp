@@ -9,6 +9,7 @@
 
 #include "model_obj.h"
 #include "z_buffer_alg.h"
+// #include "z_buffer_alg.h"
 
 #include <chrono>
 using namespace std;
@@ -134,7 +135,7 @@ int main(int argc, char** argv) {
   MatrixXf nods;
   
   igl::readOBJ((indir+mesh_name+".obj").c_str(), nods, surf);
-  cout << "faces num : " << surf.rows() << endl << "vertices num : " << nods.rows() << endl;
+  cout << "faces num : " << surf.rows() << endl << "vertices num : " << nods.rows() << endl;;
   
   surf.transposeInPlace();
   nods.transposeInPlace();
@@ -159,7 +160,7 @@ int main(int argc, char** argv) {
 
   model_ptr -> prepare_for_zbuffer();
   z_buffer_alg solver(model_ptr, window_height, window_width);
-  solver.exec(pixels, false);
+  solver.exec(pixels, true);
   auto end = system_clock::now();
   auto duration = duration_cast<microseconds>(end - start);
   cout <<  "花费了" 

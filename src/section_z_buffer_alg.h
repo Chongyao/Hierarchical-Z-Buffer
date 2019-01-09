@@ -1,3 +1,4 @@
+#if 0
 #ifndef SECTION_Z_BUFFER_ALG_H
 #define SECTION_Z_BUFFER_ALG_H
 
@@ -9,12 +10,13 @@
 
 namespace marvel{
 
-
+#ifndef TABLE_STRUCTURE
 struct polygen{
   size_t id;
   int dy;
-
 };
+
+
 
 struct edge{
   float x;
@@ -39,9 +41,23 @@ struct active_edge{
   size_t id;
   
 };
+#endif
+
+struct break_point{
+  break_point(const float& x_, const bool if_left_, const size_t& id_):x(x_), if_left(if_left_), edge_id(id_){}
+  float x;
+  bool if_left;
+  size_t edge_id;
+  
+
+  bool operator < (const break_point& other) const{
+    return x < other.x;
+  }
+};
+
 class sec_z_buffer_alg{
  public:
-  z_buffer_alg(const std::shared_ptr<model_obj> model_ptr, const size_t& range_y, const size_t& range_x);
+  sec_z_buffer_alg(const std::shared_ptr<model_obj> model_ptr, const size_t& range_y, const size_t& range_x);
   int exec(float* frame_buffer);
   
  private:
@@ -70,3 +86,4 @@ class sec_z_buffer_alg{
 }
 #endif
 
+#endif
