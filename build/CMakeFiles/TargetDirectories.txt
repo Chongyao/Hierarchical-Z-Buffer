@@ -1,8 +1,0 @@
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles/rebuild_cache.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/CMakeFiles/edit_cache.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/rebuild_cache.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/mylib.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/src/CMakeFiles/edit_cache.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/rebuild_cache.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/z_buffer.dir
-/home/zcy/Documents/projects/Hierarchical-Z-Buffer/build/tests/CMakeFiles/edit_cache.dir

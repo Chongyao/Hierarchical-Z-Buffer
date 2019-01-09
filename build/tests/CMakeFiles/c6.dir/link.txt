@@ -1,1 +1,0 @@
-/usr/bin/c++  -fopenmp -std=c++11 -o3 -fpermissive -DGLEW_STATIC -O3 -DNDEBUG  -rdynamic CMakeFiles/c6.dir/c6_base.cpp.o  -o ../bin/c6 -lGLEW -lGL -lGLU -lglfw -lSOIL -lsfml-window -lsfml-system -lGLEW -lGL -lGLU -lglfw -lSOIL -lsfml-window -lsfml-system 
