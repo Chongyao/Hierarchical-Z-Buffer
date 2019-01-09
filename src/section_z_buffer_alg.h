@@ -1,5 +1,5 @@
-#ifndef Z_BUFFER_ALG_H
-#define Z_BUFFER_ALG_H
+#ifndef SECTION_Z_BUFFER_ALG_H
+#define SECTION_Z_BUFFER_ALG_H
 
 #include<list>
 #include<vector>
@@ -39,7 +39,7 @@ struct active_edge{
   size_t id;
   
 };
-class z_buffer_alg{
+class sec_z_buffer_alg{
  public:
   z_buffer_alg(const std::shared_ptr<model_obj> model_ptr, const size_t& range_y, const size_t& range_x);
   int exec(float* frame_buffer);

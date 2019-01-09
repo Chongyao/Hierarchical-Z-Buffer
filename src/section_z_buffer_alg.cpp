@@ -12,8 +12,8 @@ static const float max_float = numeric_limits<float>::max();
 
 
 
-int z_buffer_alg::construct_polygen_table(){
-  #pragma parallel omp for
+int sec_z_buffer_alg::construct_polygen_table(){
+  #pragma omp parallel for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
     //exculde the plane vertical to z=0
     if(model_ptr_ -> get_depth_shader_value(0, i) < 0 || model_ptr_ -> get_dzx(i) == max_float)
@@ -26,8 +26,8 @@ int z_buffer_alg::construct_polygen_table(){
 
 }
   
-int z_buffer_alg::construct_edge_table(){
-  #pragma parallel omp for
+int sec_z_buffer_alg::construct_edge_table(){
+  #pragma omp parallel for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
   if(model_ptr_ -> get_depth_shader_value(0, i) < 0 || model_ptr_ -> get_dzx(i) == max_float)
       continue;
@@ -49,7 +49,7 @@ int z_buffer_alg::construct_edge_table(){
 }
 
 
-z_buffer_alg::z_buffer_alg(const shared_ptr<model_obj> model_ptr, const size_t& range_y, const size_t& range_x):range_y_(range_y), range_x_(range_x), model_ptr_(model_ptr){
+sec_z_buffer_alg::sec_z_buffer_alg(const shared_ptr<model_obj> model_ptr, const size_t& range_y, const size_t& range_x):range_y_(range_y), range_x_(range_x), model_ptr_(model_ptr){
   
 
   polygen_table_ = vector<vector<polygen>>(range_y_);
@@ -63,7 +63,7 @@ z_buffer_alg::z_buffer_alg(const shared_ptr<model_obj> model_ptr, const size_t& 
   construct_edge_table();
 }
 
-int z_buffer_alg::exec(float* frame_buffer){
+int sec_z_buffer_alg::exec(float* frame_buffer){
 
   
   vector<float> z_buffer(range_x_);
@@ -81,7 +81,7 @@ int z_buffer_alg::exec(float* frame_buffer){
 }
 
 
-int z_buffer_alg::update_active_polys(){
+int sec_z_buffer_alg::update_active_polys(){
   for(auto iter = active_polygen_table_.begin(); iter != active_polygen_table_.end();){
     if( -- iter->dy  < 0)
       iter = active_polygen_table_.erase(iter);
@@ -90,7 +90,7 @@ int z_buffer_alg::update_active_polys(){
   }
 }
 
-int z_buffer_alg::activate_polygens_and_edges(const size_t& line){
+int src_z_buffer_alg::activate_polygens_and_edges(const size_t& line){
   size_t iter_edge = 0;
   
   for(const auto& poly : polygen_table_[line]){
@@ -137,7 +137,7 @@ int z_buffer_alg::activate_polygens_and_edges(const size_t& line){
   return 0;
 }
 
-int z_buffer_alg::update_active_edges(const size_t& line){
+int sec_z_buffer_alg::update_active_edges(const size_t& line){
   auto find_another_edge = [this](const size_t& poly_id, const size_t& line ) -> float{
     for(auto& edge : edge_table_[line])
       if(edge.id == poly_id)
@@ -176,9 +176,9 @@ int z_buffer_alg::update_active_edges(const size_t& line){
   }
 }
 
-int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, const size_t& line){
+int src_z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, const size_t& line){
   Map<MatrixXf> map_frame_buffer(frame_buffer, 3, range_y_ * range_x_);
-    #pragma parallel omp for
+    #pragma omp parallel for
   for(auto& edge_pair : active_edge_table_){
     auto begin = static_cast<size_t>(round(edge_pair.xl));
     auto end = static_cast<size_t>(round(edge_pair.xr));
