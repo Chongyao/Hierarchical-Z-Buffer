@@ -14,7 +14,6 @@ static const float max_float = numeric_limits<float>::max();
 
 
 int z_buffer_alg::construct_polygen_table(){
-  #pragma parallel omp for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
     //exculde the plane vertical to z=0
     if(model_ptr_ -> get_dzx(i) == max_float)
@@ -28,7 +27,6 @@ int z_buffer_alg::construct_polygen_table(){
 }
   
 int z_buffer_alg::construct_edge_table(){
-  #pragma parallel omp for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
   if(model_ptr_ -> get_dzx(i) == max_float)
       continue;
@@ -182,7 +180,7 @@ int z_buffer_alg::update_active_edges(const size_t& line){
 
 int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, const size_t& line){
   Map<MatrixXf> map_frame_buffer(frame_buffer, 3, range_y_ * range_x_);
-    #pragma parallel omp for
+
   for(auto& edge_pair : active_edge_table_){
     auto begin = static_cast<size_t>(round(edge_pair.xl));
     auto end = static_cast<size_t>(round(edge_pair.xr));

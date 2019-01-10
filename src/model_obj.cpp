@@ -113,7 +113,7 @@ Eigen::Vector3f model_obj::get_color() const{
 }
 
 void model_obj::set_verts_to_pixels(){
-  #pragma parallel omp for
+  #pragma omp parallel for
   for(size_t i = 0; i < nods_.size(); ++i){
     nods_(i) = round(nods_(i));
   }
