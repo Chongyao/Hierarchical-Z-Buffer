@@ -30,7 +30,7 @@ int z_buffer_alg::construct_polygen_table(){
 int z_buffer_alg::construct_edge_table(){
   #pragma parallel omp for
   for(size_t i = 0; i < model_ptr_ -> get_num_tris(); ++i){
-  if(model_ptr_ -> get_depth_shader_value(0, i) < 0 || model_ptr_ -> get_dzx(i) == max_float)
+  if(model_ptr_ -> get_dzx(i) == max_float)
       continue;
     for(size_t j = 0; j < 3; ++j){
       float x, dx;
@@ -192,7 +192,7 @@ int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, c
       // assert(new_z_value >= 0);
       if(new_z_value > z_buffer[i]){
         z_buffer[i] = new_z_value;
-        map_frame_buffer.col(line * range_x_  + i) = model_ptr_ -> get_color() * model_ptr_ -> get_depth_shader_value(new_z_value, edge_pair.id);
+        map_frame_buffer.col(line * range_x_  + i) = model_ptr_ -> get_depth_shader_value(edge_pair.id);
 
       }
     }
@@ -203,7 +203,7 @@ int z_buffer_alg::update_buffers(vector<float>& z_buffer, float* frame_buffer, c
 int z_buffer_alg::section_update_buffers(vector<float>& z_buffer, float* frame_buffer, const size_t& line){
   Map<MatrixXf> map_frame_buffer(frame_buffer, 3, range_y_ * range_x_);
 
-  cout << "line " << line << endl;
+
   multiset<break_point> section;
   set<size_t> in_pairs;
   
@@ -255,9 +255,20 @@ int z_buffer_alg::section_update_buffers(vector<float>& z_buffer, float* frame_b
         domain_poly_id = edge_pair->id;
       }
     }
-    //TODO pre calculated the color
-    //TODO  optimize the get_depth_shader_value
-    map_frame_buffer.block(0, line * range_x_ + left_pix, 3, right_pix - left_pix + 1) = model_ptr_ -> get_color() * model_ptr_ -> get_depth_shader_value(0, domain_poly_id) * MatrixXf::Ones(1, right_pix - left_pix + 1);
+    if(domain_poly_id != -1){
+      Vector3f shader = model_ptr_->get_depth_shader_value(domain_poly_id);
+      for(size_t i = 0; i < right_pix - left_pix + 1; ++i){
+        size_t offset = (line * range_x_  + left_pix + i) * 3;
+        frame_buffer[offset] = shader(0);
+        frame_buffer[offset + 1] = shader(1);
+        frame_buffer[offset + 1] = shader(2);
+      }
+    }
+
+
+
+
+    
   }
   return 0;
 }

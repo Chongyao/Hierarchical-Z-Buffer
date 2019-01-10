@@ -23,7 +23,7 @@ class model_obj{
   void get_edge_info(const size_t& poly_id, const size_t& edge_id, float& top_x_coor, float& dx, int& dy, size_t& y_max, size_t& v_id) const;
   std::shared_ptr<std::vector<float>> get_plane(const size_t poly_id) const;
   float get_depth(const size_t& vertex_id) const;
-  float get_depth_shader_value(const float& z_value, const size_t& poly_id)const;
+  Eigen::Vector3f get_depth_shader_value(const size_t& poly_id) const;
   Eigen::Vector3f get_color() const;
  protected:
   size_t num_tris_;
@@ -33,8 +33,10 @@ class model_obj{
   
   std::vector<float> dzx_;
   std::vector<float> dzy_;
-  std::vector<float> shader_;
+  // std::vector<float> shader_;
   bool if_prepared_;
+
+  Eigen::MatrixXf shader_;
 
 
   void set_verts_to_pixels();

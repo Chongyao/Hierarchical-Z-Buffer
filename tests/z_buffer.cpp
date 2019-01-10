@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-#include <libigl/include/igl/readOBJ.h>
+#include <libigl/readOBJ.h>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
@@ -19,7 +19,7 @@ using namespace chrono;
 
 
 static float screen_range = 0.75;
-static int window_width = 512, window_height = 512;
+static int window_width = 800, window_height = 800;
 static float* pixels = new float[window_width * window_height * 3];
 
 
@@ -105,7 +105,7 @@ void errorCallback(int error, const char* description)
 }
 
 int main(int argc, char** argv) {
-  auto start = system_clock::now();
+
   
   Eigen::initParallel();
   cout << "[INFO]>>>>>>>>>>>>>>>>>>>Eigen parallel<<<<<<<<<<<<<<<<<<" << endl;
@@ -113,7 +113,8 @@ int main(int argc, char** argv) {
   
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>load obj<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
   boost::property_tree::ptree pt;{
-    const string jsonfile_path = argv[1];
+    // const string jsonfile_path = argv[1];
+    const string jsonfile_path = "../../input.json";
     
     cout << jsonfile_path << endl;
     const size_t ext = jsonfile_path.rfind(".json");
@@ -159,16 +160,26 @@ int main(int argc, char** argv) {
 
   model_ptr -> prepare_for_zbuffer();
   z_buffer_alg solver(model_ptr, window_height, window_width);
-  solver.exec(pixels, false);
+  auto start = system_clock::now();
+  solver.exec(pixels, true);
   auto end = system_clock::now();
   auto duration = duration_cast<microseconds>(end - start);
-  cout <<  "花费了" 
+  cout <<  "section sacn line花费了" 
        << double(duration.count()) * microseconds::period::num / microseconds::period::den 
        << "秒" << endl;
-
+  // return 0;
+  #if 0
+  start = system_clock::now();
+  solver.exec(pixels, false);
+  end = system_clock::now();
+  duration = duration_cast<microseconds>(end - start);
+  cout <<  "scan line 花费了" 
+       << double(duration.count()) * microseconds::period::num / microseconds::period::den 
+       << "秒" << endl;
   
+  return 0;
 
-
+  #endif
 
   
   // Initialize GLFW

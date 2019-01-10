@@ -48,19 +48,19 @@ int model_obj::prepare_for_zbuffer(){
   
   dzx_.resize(num_tris_);
   dzy_.resize(num_tris_);
-  shader_.resize(num_tris_);
-  #pragma parallel omp for
+  shader_.resize(3, num_tris_);
+  #pragma omp parallel for
   for(size_t i = 0; i < num_tris_; ++i){
     auto plane = get_plane(i);
     if(   fabs((*plane)[2]) > 1e-5){
       dzx_[i] = -(*plane)[0] / (*plane)[2];
       dzy_[i] =  (*plane)[1] / (*plane)[2];
-      shader_[i] = (*plane)[2]/sqrt( (*plane)[0] * (*plane)[0] + (*plane)[1] * (*plane)[1] + (*plane)[2] * (*plane)[2] );
+      shader_.col(i) = (*plane)[2]/sqrt( (*plane)[0] * (*plane)[0] + (*plane)[1] * (*plane)[1] + (*plane)[2] * (*plane)[2] ) * color_;
     }
     else{
       dzx_[i] = max_float;
       dzy_[i] = max_float;
-      shader_[i] = 0;
+      shader_.col(i) = Vector3f::Zero();
     }
   }
 
@@ -104,8 +104,8 @@ void model_obj::get_edge_info(const size_t& poly_id, const size_t& edge_id, floa
 float model_obj::get_depth(const size_t& vertex_id) const{
   return nods_(2, vertex_id);
 }
-float model_obj::get_depth_shader_value(const float& z_value, const size_t& poly_id) const{
-  return shader_[poly_id];
+Vector3f model_obj::get_depth_shader_value(const size_t& poly_id) const{
+  return shader_.col(poly_id);
 }
 
 Eigen::Vector3f model_obj::get_color() const{
