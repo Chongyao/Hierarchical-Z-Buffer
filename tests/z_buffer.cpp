@@ -140,7 +140,7 @@ int main(int argc, char** argv) {
   surf.transposeInPlace();
   nods.transposeInPlace();
   Vector3f color;
-  color << 241,169.0,255.0;
+  color << 220,169.0,255.0;
   color /= 255.0;
   shared_ptr<model_obj> model_ptr(new model_obj(surf, nods, color));
   MatrixXf bdbox;
